@@ -8,10 +8,10 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title>Software Seguro</title>
+        <?php session_start();?>
     </head>
     <body>
         <?php
-            session_start();
             if (!isset($_SESSION["session_username"])) {
                 header("location:login.php");
             } else {
