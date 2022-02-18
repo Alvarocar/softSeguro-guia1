@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXIST secure_software;
+USE secure_software;
+
+CREATE TABLE IF NOT EXISTS user (
+  id mediumint NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  fullname VARCHAR(32) NOT NULL,
+  username VARCHAR(32) NOT NULL,
+  password VARCHAR(32) NOT NULL,
+  email VARCHAR(32) DEFAULT NULL,
+) ENGINE = InnoDB DEFAULT CHARSET = latin1;
+
+ALTER TABLE
+  user
+ADD
+  UNIQUE email (email);
