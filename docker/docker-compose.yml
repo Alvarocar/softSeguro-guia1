@@ -27,7 +27,8 @@ services:
       networks:
        - secure
       volumes:
-        - ./database.sql:/docker-entrypoint-initdb.d/1.sql
+        - ./sql/database.sql:/docker-entrypoint-initdb.d/1.sql
+        - ./sql/trigger.sql:/docker-entrypoint-initdb.d/2.sql
 volumes:
   app:
 networks:

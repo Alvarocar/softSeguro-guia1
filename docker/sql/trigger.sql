@@ -1,0 +1,2 @@
+CREATE TRIGGER md5password BEFORE INSERT ON user
+FOR EACH ROW SET NEW.password = MD5(NEW.password);

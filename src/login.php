@@ -19,6 +19,7 @@
 
   function find_user($email, $pass) {
     global $con;
+    $pass = md5($pass);
     return $con->query("SELECT u.username FROM user as u WHERE u.email='". $email."' AND u.password='". $pass."'");
   }
 
@@ -75,8 +76,8 @@
       <fieldset class="d-grid gap-2">
         <legend>Login</legend>
         <section class="d-grid gap-4">
-          <input name="email" type="email" class="form-control">
-          <input name="pass" type="password" class="form-control">
+          <input name="email" placeholder="Correo" type="email" class="form-control">
+          <input name="pass" placeholder="Contraseña" type="password" class="form-control">
         </section>
       </fieldset>
       <button class="btn btn-info p-2" type="submit" name="login">Ingresar</button>
